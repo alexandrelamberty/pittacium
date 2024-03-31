@@ -1,4 +1,4 @@
-module github.com/alexandrelamberty/barcode-generator
+module github.com/alexandrelamberty/labels
 
 go 1.19
 

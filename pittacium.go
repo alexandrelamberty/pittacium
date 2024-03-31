@@ -1,4 +1,4 @@
-package main
+package labels
 
 import (
 	"fmt"
@@ -52,6 +52,11 @@ var (
 )
 
 func main() {
+	// Create image directory if it doesn't exist
+	if _, err := os.Stat(imagePath); os.IsNotExist(err) {
+		os.Mkdir(imagePath, 0755)
+	}
+
 	// A list of products
 	products := []Product{
 		{Code: "5400141850574", Name: "Cereal Flakes", Price: 1.72},
@@ -140,6 +145,9 @@ func main() {
 
 	// Generating the PDF from the products
 	generatePDF(document, products)
+
+	// Delete the images folder
+	os.RemoveAll(imagePath)
 }
 
 // Generate barcode image and save it in the imagePath directory
