@@ -3,11 +3,9 @@ package pittacium
 import (
 	"fmt"
 	"image/png"
-	"log"
 	"math"
 	"os"
 	"path/filepath"
-	"time"
 
 	"github.com/boombuler/barcode/ean"
 	"github.com/go-pdf/fpdf"
@@ -105,11 +103,8 @@ func generatePDF(document Document, products []Product) *fpdf.Fpdf {
 	columns := int(math.Floor(pageWidth / document.LabelFormat.WidthMM))
 	rows := int(math.Floor(pageHeight / document.LabelFormat.HeightMM))
 	
-	fmt.Println(columns, rows)
-
 	// Calculate the number of pages
 	pageCount := int(math.Ceil(float64(len(products)) / float64(columns*rows)))
-	fmt.Println(pageCount)
 
 	// Add products and labels to each page
 	for page := 1; page <= pageCount; page++ {
