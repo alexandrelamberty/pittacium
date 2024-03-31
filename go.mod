@@ -1,4 +1,4 @@
-module github.com/alexandrelamberty/labels
+module github.com/alexandrelamberty/pittacium
 
 go 1.19
 
