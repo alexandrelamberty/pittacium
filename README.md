@@ -1,3 +1,5 @@
+[![Go](https://github.com/alexandrelamberty/pittacium/actions/workflows/golang.yaml/badge.svg)](https://github.com/alexandrelamberty/pittacium/actions/workflows/golang.yaml)
+
 # Pittacium
 
 Pittacium is a Go library for generating PDF documents with labels, primarily
